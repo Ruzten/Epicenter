@@ -9,7 +9,7 @@ Proyecto final de Programación III, Ingeniería de Sistemas y Computación, Uni
 ## Equipo
 
 | Nombre completo | Código |
-| --- | --- | --- |
+| --- | --- | 
 | Ruben Steven Sanchez | 1092458430 | 
 | Jhonatan Cardona Leon| 1092457799 | 
 | Diana Gaona Valencia | 1092853450 | 
