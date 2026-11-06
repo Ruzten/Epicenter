@@ -1,18 +1,10 @@
 defmodule Epicenter do
   @moduledoc """
-  Documentation for `Epicenter`.
+  Sistema de coordinación y gestión de emergencias posterior a un terremoto.
+
+  La guía del proyecto está en `README.md` y `docs/`.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Epicenter.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  @typedoc "Respuesta común de las operaciones del sistema."
+  @type resultado :: {:ok, term()} | {:error, term()}
 end

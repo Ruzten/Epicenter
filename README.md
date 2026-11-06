@@ -4,7 +4,7 @@ Sistema multiusuario en Elixir que simula una plataforma distribuida para coordi
 
 Proyecto final de Programación III, Ingeniería de Sistemas y Computación, Universidad del Quindío (2026-2).
 
-> **Estado:** en planificación. Todavía no hay código implementado.
+> **Estado:** base creada. Las funcionalidades todavía no están implementadas.
 
 ## Equipo
 
@@ -47,7 +47,33 @@ Permitir que ciudadanos, voluntarios, coordinadores y administradores registren 
 
 ## Ejecución
 
-Las instrucciones de instalación, ejecución y pruebas se agregarán cuando se cree el proyecto.
+Compilar:
+
+```bash
+mix compile
+```
+
+Ejecutar las pruebas:
+
+```bash
+mix test
+```
+
+Abrir el sistema en una consola interactiva:
+
+```bash
+iex -S mix
+```
+
+## Estructura
+
+- `lib/epicenter/application.ex`: árbol de procesos.
+- `lib/epicenter/estructuras/`: estructuras compartidas.
+- `lib/epicenter/`: módulos del sistema.
+- `lib/epicenter/comandos/`: catálogo, permisos y manejadores de comandos.
+- `test/`: pruebas.
+- `docs/decisiones.md`: reglas y responsables.
+- `docs/comandos.md`: lista de comandos.
 
 ## Entregables
 
