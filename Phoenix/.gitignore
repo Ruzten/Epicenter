@@ -1,0 +1,7 @@
+# Archivos compilados y dependencias de la interfaz web.
+/_build/
+/deps/
+/cover/
+/doc/
+/tmp/
+erl_crash.dump

@@ -74,6 +74,8 @@ iex -S mix
 - `test/`: pruebas.
 - `docs/decisiones.md`: reglas y responsables.
 - `docs/comandos.md`: lista de comandos.
+- `docs/identidad-visual.md`: colores, tipografía, logo y componentes.
+- `Phoenix/`: interfaz web; ver `Phoenix/README.md`.
 
 ## Entregables
 

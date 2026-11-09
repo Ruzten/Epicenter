@@ -1,0 +1,75 @@
+<main class="ep-acceso">
+  <section class="ep-acceso__marca">
+    <div class="ep-acceso__logo">
+      <.isotipo variante="tinta" tamano={40} />
+      <span>Epicenter</span>
+    </div>
+
+    <div class="ep-acceso__mensaje">
+      <p class="ep-acceso__titular">Coordinación de la atención después de un terremoto.</p>
+      <p class="ep-acceso__texto">
+        Registra necesidades, asigna recursos, encuentra personas y organiza albergues con tu equipo.
+      </p>
+    </div>
+
+    <svg
+      class="ep-acceso__traza"
+      viewBox="0 0 600 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <polyline points="0,44 150,44 180,40 200,48 222,30 240,62 262,8 284,76 306,22 326,54 344,36 362,46 380,44 600,44" />
+    </svg>
+
+    <svg class="ep-acceso__ondas" viewBox="0 0 480 480" aria-hidden="true">
+      <circle cx="480" cy="480" r="120" />
+      <circle cx="480" cy="480" r="200" />
+      <circle cx="480" cy="480" r="280" />
+      <circle cx="480" cy="480" r="360" />
+      <circle cx="480" cy="480" r="440" />
+    </svg>
+  </section>
+
+  <section class="ep-acceso__panel">
+    <div class="ep-acceso__formulario">
+      <header class="ep-acceso__encabezado">
+        <h1 class="titulo-1">Ingresar</h1>
+        <p class="cuerpo-sm ep-acceso__ayuda">
+          Si es tu primera vez, tu cuenta se crea con estos datos.
+        </p>
+      </header>
+
+      <.avisos flash={@flash} />
+
+      <.form for={@form} action={~p"/ingresar"} class="ep-formulario">
+        <.campo field={@form[:usuario]} etiqueta="Usuario" autocomplete="username" autofocus />
+        <.campo
+          field={@form[:contrasena]}
+          type="password"
+          etiqueta="Contraseña"
+          autocomplete="current-password"
+        />
+
+        <details class="ep-acceso__registro" open={@registro_abierto}>
+          <summary>¿Primera vez? Elige tu tipo y tu zona</summary>
+          <div class="ep-acceso__registro-campos">
+            <.campo
+              field={@form[:tipo]}
+              type="select"
+              etiqueta="Tipo de usuario"
+              opciones={@tipos}
+              sugerencia="Elige un tipo"
+            />
+            <.campo
+              field={@form[:zona]}
+              etiqueta="Zona principal"
+              ayuda="Por ejemplo: centro o zona_norte"
+            />
+          </div>
+        </details>
+
+        <button class="ep-boton ep-acceso__enviar" type="submit">Ingresar</button>
+      </.form>
+    </div>
+  </section>
+</main>
