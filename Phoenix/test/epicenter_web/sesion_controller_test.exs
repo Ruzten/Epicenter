@@ -47,7 +47,7 @@ defmodule EpicenterWeb.SesionControllerTest do
           nombre_usuario: "laura",
           nombre_completo: nil,
           rol: :coordinador,
-          zona: "centro"
+          zona_principal: "centro"
         }
       })
       |> get("/ingresar")
@@ -63,7 +63,7 @@ defmodule EpicenterWeb.SesionControllerTest do
           nombre_usuario: "laura",
           nombre_completo: nil,
           rol: :coordinador,
-          zona: "centro"
+          zona_principal: "centro"
         }
       })
       |> get("/")

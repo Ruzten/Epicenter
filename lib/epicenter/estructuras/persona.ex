@@ -1,5 +1,12 @@
 defmodule Epicenter.Persona do
-  @moduledoc "Persona afectada. `historial` conserva sus cambios de estado."
+  @moduledoc """
+  Persona afectada.
+
+  - `documento` no se repite: los mensajes y los albergues la buscan por él.
+  - `codigo_zona` apunta a `Epicenter.Zona.codigo`.
+  - `codigo_albergue` apunta a `Epicenter.Albergue.codigo` mientras esté en uno.
+  - `historial` conserva sus cambios de estado, el más reciente primero.
+  """
 
   @type estado ::
           :sin_informacion
@@ -12,20 +19,22 @@ defmodule Epicenter.Persona do
   @type t :: %__MODULE__{
           id: String.t() | nil,
           documento: String.t() | nil,
+          tipo_documento: String.t() | nil,
           nombre: String.t() | nil,
           edad: non_neg_integer() | nil,
-          zona: String.t() | nil,
+          codigo_zona: String.t() | nil,
           estado: estado(),
-          albergue: String.t() | nil,
+          codigo_albergue: String.t() | nil,
           historial: [{estado(), DateTime.t()}]
         }
 
   defstruct id: nil,
             documento: nil,
+            tipo_documento: nil,
             nombre: nil,
             edad: nil,
-            zona: nil,
+            codigo_zona: nil,
             estado: :sin_informacion,
-            albergue: nil,
+            codigo_albergue: nil,
             historial: []
 end

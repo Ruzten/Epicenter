@@ -14,7 +14,7 @@ defmodule Epicenter.Comandos.ComandosLogistica do
       tipo: tipo,
       cantidad: cantidad,
       prioridad: prioridad,
-      zona: zona,
+      codigo_zona: zona,
       descripcion: descripcion,
       reportado_por: usuario.nombre_usuario
     })
@@ -35,7 +35,7 @@ defmodule Epicenter.Comandos.ComandosLogistica do
   end
 
   def manejar(["register_center", codigo, nombre, tipo, zona], _usuario) do
-    Logistica.registrar_centro(%{codigo: codigo, nombre: nombre, tipo: tipo, zona: zona})
+    Logistica.registrar_centro(%{codigo: codigo, nombre: nombre, tipo: tipo, codigo_zona: zona})
   end
 
   def manejar(["register_resource", codigo, nombre, cantidad, unidad, ubicacion], usuario) do
@@ -43,8 +43,8 @@ defmodule Epicenter.Comandos.ComandosLogistica do
       codigo: codigo,
       nombre: nombre,
       cantidad: cantidad,
-      unidad: unidad,
-      ubicacion: ubicacion,
+      unidad_medida: unidad,
+      codigo_centro: ubicacion,
       usuario: usuario.nombre_usuario
     })
   end

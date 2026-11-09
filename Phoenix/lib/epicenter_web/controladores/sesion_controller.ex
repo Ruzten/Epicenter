@@ -60,7 +60,7 @@ defmodule EpicenterWeb.SesionController do
           nombre_usuario: usuario.nombre_usuario,
           nombre_completo: usuario.nombre_completo,
           rol: usuario.rol,
-          zona: usuario.zona
+          zona_principal: usuario.zona_principal
         })
         |> redirect(to: ~p"/")
 

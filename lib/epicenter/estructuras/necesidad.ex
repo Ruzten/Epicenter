@@ -1,5 +1,12 @@
 defmodule Epicenter.Necesidad do
-  @moduledoc "Necesidad puntual de ayuda."
+  @moduledoc """
+  Necesidad puntual de ayuda.
+
+  - `codigo_zona` apunta a `Epicenter.Zona.codigo`.
+  - `reportado_por` apunta a `Epicenter.Usuario.nombre_usuario`.
+  - `destino` dice para quién es: una persona, una familia, un albergue o la zona.
+  - `cantidad_asignada` suma las asignaciones; el detalle está en `Epicenter.Movimiento`.
+  """
 
   @type tipo ::
           :agua
@@ -20,22 +27,22 @@ defmodule Epicenter.Necesidad do
           tipo: tipo(),
           descripcion: String.t(),
           cantidad: non_neg_integer(),
-          asignado: [{String.t(), String.t(), pos_integer()}],
-          zona: String.t() | nil,
-          destino: destino(),
+          cantidad_asignada: non_neg_integer(),
           prioridad: prioridad(),
-          reportado_por: String.t() | nil,
-          estado: estado()
+          estado: estado(),
+          codigo_zona: String.t() | nil,
+          destino: destino(),
+          reportado_por: String.t() | nil
         }
 
   defstruct id: nil,
             tipo: :otra,
             descripcion: "",
             cantidad: 0,
-            asignado: [],
-            zona: nil,
-            destino: nil,
+            cantidad_asignada: 0,
             prioridad: :media,
-            reportado_por: nil,
-            estado: :pendiente
+            estado: :pendiente,
+            codigo_zona: nil,
+            destino: nil,
+            reportado_por: nil
 end

@@ -17,10 +17,12 @@ defmodule Epicenter.Logistica do
   @estado_inicial %{
     necesidades: %{},
     recursos: %{},
+    inventarios: %{},
     centros: %{},
     movimientos: [],
     siguiente_necesidad: 1,
-    siguiente_movimiento: 1
+    siguiente_movimiento: 1,
+    siguiente_inventario: 1
   }
 
   @spec start_link(term()) :: GenServer.on_start()

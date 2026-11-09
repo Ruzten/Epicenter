@@ -20,7 +20,7 @@ Estas son las reglas oficiales del proyecto.
 | Recurso crítico | Quedan menos de 10 unidades |
 | Mascotas | Especie 40, color 25, tamaño 15 y zona 20; desde 60 puntos es posible coincidencia |
 | Persistencia | `Almacen.guardar/2` y `Almacen.cargar/2` guardan el estado con `inspect` en texto plano |
-| Contraseñas | Se guardan con hash |
+| Contraseñas | Se guardan tal cual, sin hash, por ser un proyecto académico |
 | Respuestas | `{:ok, valor}` o `{:error, motivo}` |
 | Idioma | El código está en español; los comandos usan los nombres del enunciado |
 
@@ -44,7 +44,8 @@ Estas son las reglas oficiales del proyecto.
 
 ## Reglas de código
 
-- La clave del inventario es `{codigo, ubicacion}`, porque una transferencia deja el mismo código en dos lugares.
+- `Recurso` es el catálogo y `Inventario` guarda las existencias: uno por cada recurso y centro de apoyo, porque una transferencia deja el mismo recurso en dos lugares.
+- El modelo de datos está en `docs/modelo-de-datos.excalidraw` y coincide con `lib/epicenter/estructuras/`.
 - Cada GenServer guarda con `Almacen.guardar/2` antes de responder.
 - Solo `Comunidad` cambia el estado de una persona al entrar o salir de un albergue.
 - Cada persona edita solo sus módulos. Si necesita cambiar una estructura compartida o una firma pública, avisa antes.

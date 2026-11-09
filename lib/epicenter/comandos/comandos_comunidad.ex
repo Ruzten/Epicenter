@@ -10,11 +10,11 @@ defmodule Epicenter.Comandos.ComandosComunidad do
 
   @spec manejar([String.t()], Epicenter.Usuario.t()) :: Epicenter.resultado()
   def manejar(["register_zone", codigo, nombre, nivel], _usuario) do
-    Zonas.registrar_zona(%{codigo: codigo, nombre: nombre, nivel: nivel})
+    Zonas.registrar_zona(%{codigo: codigo, nombre: nombre, nivel_afectacion: nivel})
   end
 
   def manejar(["register_sector", zona, codigo, nombre, nivel], _usuario) do
-    Zonas.registrar_sector(zona, %{codigo: codigo, nombre: nombre, nivel: nivel})
+    Zonas.registrar_sector(zona, %{codigo: codigo, nombre: nombre, nivel_afectacion: nivel})
   end
 
   def manejar(["register_point", sector, codigo, nombre], _usuario) do
@@ -28,7 +28,7 @@ defmodule Epicenter.Comandos.ComandosComunidad do
     Comunidad.reportar_persona(%{
       documento: documento,
       nombre: nombre,
-      zona: zona,
+      codigo_zona: zona,
       estado: estado,
       usuario: usuario.nombre_usuario
     })
@@ -58,7 +58,7 @@ defmodule Epicenter.Comandos.ComandosComunidad do
     Comunidad.registrar_albergue(%{
       codigo: codigo,
       nombre: nombre,
-      zona: zona,
+      codigo_zona: zona,
       capacidad: capacidad
     })
   end
@@ -86,7 +86,7 @@ defmodule Epicenter.Comandos.ComandosComunidad do
       nombre: nombre,
       color: color,
       tamano: tamano,
-      zona: zona,
+      codigo_zona: zona,
       contacto: contacto
     })
   end

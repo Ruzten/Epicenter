@@ -1,21 +1,23 @@
 defmodule Epicenter.Usuario do
-  @moduledoc "Usuario del sistema."
+  @moduledoc """
+  Usuario del sistema.
+
+  Clave: `nombre_usuario`. `zona_principal` apunta a `Epicenter.Zona.codigo`.
+  """
 
   @type rol :: :ciudadano | :voluntario | :coordinador | :administrador
 
   @type t :: %__MODULE__{
           nombre_usuario: String.t() | nil,
-          hash_contrasena: String.t() | nil,
-          sal: String.t() | nil,
+          contrasena: String.t() | nil,
           nombre_completo: String.t() | nil,
           rol: rol(),
-          zona: String.t() | nil
+          zona_principal: String.t() | nil
         }
 
   defstruct nombre_usuario: nil,
-            hash_contrasena: nil,
-            sal: nil,
+            contrasena: nil,
             nombre_completo: nil,
             rol: :ciudadano,
-            zona: nil
+            zona_principal: nil
 end

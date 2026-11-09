@@ -12,7 +12,7 @@
   <.avisos flash={@flash} />
   <h1 class="titulo-1">Hola, {@usuario.nombre_completo || @usuario.nombre_usuario}</h1>
   <p class="cuerpo ep-pagina__texto">
-    Ingresaste como {@usuario.rol} en la zona {@usuario.zona || "sin asignar"}.
+    Ingresaste como {@usuario.rol} en la zona {@usuario.zona_principal || "sin asignar"}.
     Las demás pantallas se construirán aquí.
   </p>
 </main>
